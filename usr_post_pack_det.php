@@ -1,0 +1,119 @@
+<?php
+include_once 'connect.php'; 
+session_start();
+$i = $_SESSION['id'];
+if(!(isset($_SESSION['user_name'])))
+{
+	header('location:index.php');
+}
+$id=$_REQUEST['p_name_id'];
+?>
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Left Sidebar - Phase Shift by TEMPLATED</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.dropotron.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-wide.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div class="wrapper style1">
+
+				<!-- Header -->
+					<div id="header" class="skel-panels-fixed">
+						<div id="logo">
+							<h1><a href="index.html">SALLOW TV</a></h1>
+							<span class="tag">Enjoy ur days with Sallow.</span>
+						</div>
+						<nav id="nav">
+							<ul>
+								<li><a href="usrhme.php">User Details</a></li>
+								<li><a href="usr_own_pack_det.php">Your Package</a></li>
+								<li><a href="usr_chnls.php">Avilable Channels</a></li>
+								<li><a href="change_pswd.php">Change Password</a></li>
+								<li><a href="logout.php">Logout</a></li>
+							</ul>
+						</nav>
+					</div>
+				<!-- Header -->
+
+				<!-- Page -->
+					
+								<section>
+									
+									<center>
+	<div>
+<form 
+			style="border:2px solid #DC6180;
+                  background-color: #fff;
+						 margin:15px 250px 10px 250px;
+						background-size: cover;
+							">
+							
+	<header class="major">
+	<center><h3>Packages Details</h3></center></header>
+		<table style="border-collapse: collapse; text-align: center; width: 300px;   border: 3px solid blue;">
+		<?php
+		$results=mysqli_query($con,"SELECT `package`.`p_name_id`,`channel`.`c_name`,`channel`.`logo`,`channel`.`discripition` FROM `package`,`pack_name`,`channel`  WHERE `package`.`p_name_id`=`pack_name`.`p_name_id` 
+		AND `package`.`channel_id`=`channel`.`channel_id` AND `package`.`p_name_id`=$id;");
+while($row=mysqli_fetch_array($results))
+	
+{
+
+?>
+
+
+<tr><td><input name="unme" type="text" value="<?php echo $row['c_name']; ?>"/></td></tr>
+<tr><td><img src="channel/<?php echo $row['logo'];?>" alt=" " height="75" width="75"></td></tr>
+<!--<tr><td><input name="dist" type="text" value="<?php //echo $row['discripition']; ?>"/></td></tr>-->
+
+
+
+
+<?php } ?><tr><td><br></td></tr>
+<tr><td ><a href="usr_payment.php?p_name_id=<?php echo $row['p_name_id'];?>" >
+<img src="images/subscribenow.png" width="150" height="73" title="subs" alt="subs"></a>
+</td>
+</tr>
+</table>
+
+	</form></div>
+
+	
+</div></center>
+
+					
+						
+					
+					
+				</section>
+	
+<div id="footer" class="wrapper style2">
+			<div class="container" style="height: 15px;">
+				<section>
+					<header class="major">
+						<h4>SALLOW TV</h4>
+						<span class="byline">Enjoy ur days with Sallow.</span>
+						
+					</header>
+					
+				</section>
+			</div>
+		</div>
+	</body>
+</html>
