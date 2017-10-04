@@ -10,7 +10,7 @@ if(!(isset($_SESSION['user_name'])))
 
 <html>
 	<head>
-		<title>Left Sidebar - Phase Shift by TEMPLATED</title>
+		<title>Swallow program</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -35,8 +35,8 @@ if(!(isset($_SESSION['user_name'])))
 				<!-- Header -->
 					<div id="header" class="skel-panels-fixed">
 						<div id="logo">
-							<h1><a href="index.html">SALLOW TV</a></h1>
-							<span class="tag">Enjoy ur days with Sallow.</span>
+							<h1>SWALLOW TV</h1>
+							<span class="tag">Enjoy Your Days With Sallow.</span>
 						</div>
 						<nav id="nav">
 							<ul>
@@ -79,15 +79,16 @@ if(!(isset($_SESSION['user_name'])))
 				</section>
 	
 <div id="footer" class="wrapper style2">
-			<div class="container" style="height: 45px;">
-				<section>
-					<header class="major">
-						<h2>Mauris vulputate dolor</h2>
-						<span class="byline">Integer sit amet pede vel arcu aliquet pretium</span>
+
+			<section>
+					<header >
+						<h2>SWALLOW TV</h2><br>
+						<h3>Enjoy Your Days With Swallow.</h3><br><br><br>
+						<h5>Powered by Tearm swallow,  &nbspswallow777kerala@ac.in &nbsp ph: +91 8846521474</h5>
+						
 					</header>
 					
 				</section>
-			</div>
 		</div>
 	</body>
 </html>

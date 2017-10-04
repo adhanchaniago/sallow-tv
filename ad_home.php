@@ -12,7 +12,7 @@ if(!(isset($_SESSION['user_name'])))
 
 <html>
 	<head>
-		<title>Phase Shift by TEMPLATED</title>
+		<title>Tearm  swallow</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -37,8 +37,8 @@ if(!(isset($_SESSION['user_name'])))
 				<!-- Header -->
 					<div id="header" class="skel-panels-fixed">
 						<div id="logo">
-							<h1><a href="index.html">SALLOW TV</a></h1>
-							<span class="tag">Enjoy ur days with Sallow.</span>
+							<h1>SWALLOW TV</h1>
+							<span class="tag">Enjoy Your Days With Swallow.</span>
 						</div>
 						<nav id="nav">
 							<ul>
@@ -70,24 +70,24 @@ if(!(isset($_SESSION['user_name'])))
 								<section class="4u"> <a href="ad_new_chanl.php" class="image featured"><img src="images/pic03.jpg" width="150px" height="153px" alt=""></a>
 									<div class="box">
 										<p>Freeview offers 70 TV channels, 15 HD* channels, In fact over 95% of the nation’s favourite programmes are available**.</p>
-										<a href="ad_new_chanl.php" class="button">&nbsp&nbsp Add Channels &nbsp&nbsp</a><br><br>
+										<a href="ad_new_chanl.php" class="button">&nbsp&nbsp&nbsp Add Channels &nbsp&nbsp&nbsp</a><br><br>
                                        <a href="ad_channel_det_edit.php" class="button">Channels Details</a></div>
 								</section>
 								<section class="4u"> <a href="ad_new_pgm.php" class="image featured"><img src="images/pgm.jpg" width="150px" height="130px" alt=""></a>
 									<div class="box">
 										<p>A channel partner program helps vendors' product and associated services via the channel.</p>
-										<a href="ad_new_pgm.php" class="button">&nbsp&nbsp -- &nbsp&nbsp</a> <br><br>
-										<a href="ad_pgm_det_edit.php" class="button">---</a></div>
+										<a href="" class="button">&nbsp&nbsp -- &nbsp&nbsp</a> <br><br>
+										<a href="" class="button">---</a></div>
 								</section>
 							</div>
 							<div class="row no-collapse-1">
 								<section class="4u"> <a href="ad_new_pkge.php" class="image featured"><img src="images/pk.jpg" width="150px" height="130px" alt=""></a>
 									<div class="box">
 										<p>Compare the Best TV packages & bundles from Sky All packages have the option to add on Sky channels.</p>
-										<a href="ad_new_pkge.php" class="button">Add Channel list</a> <br><br>
-										<a href="" class="button">Edit channel list</a></div>
+										<a href="ad_new_pkge.php" class="button">&nbsp&nbsp Add Channel list &nbsp&nbsp</a> <br><br>
+										<a href="" class="button">channel list details</a></div>
 								</section>
-								<section class="4u"> <a href="ad_new_pgm.php" class="image featured"><img src="images/pgm.jpg" width="150px" height="130px" alt=""></a>
+								<section class="4u"> <a href="ad_new_pgm.php" class="image featured"><img src="images/chd.jpg" width="150px" height="130px" alt=""></a>
 									<div class="box">
 										<p>A channel partner program helps vendors' product and associated services via the channel.</p>
 										<a href="ad_new_pgm.php" class="button">&nbsp&nbsp Add Program &nbsp&nbsp</a> <br><br>
@@ -96,7 +96,7 @@ if(!(isset($_SESSION['user_name'])))
 								<section class="4u"> <a href="" class="image featured"><img src="images/pk.jpg" width="150px" height="130px" alt=""></a>
 									<div class="box">
 										<p>Compare the Best TV packages & bundles from Sky All packages have the option to add on Sky channels.</p>
-										<a href="ad_add_pack.php" class="button">&nbsp Add Packages &nbsp</a> <br><br>
+										<a href="ad_add_pack.php" class="button">&nbsp&nbsp&nbsp Add Packages &nbsp&nbsp&nbsp</a> <br><br>
 										<a href="ad_package_det_edit.php" class="button">&nbsp Package Details &nbsp</a></div>
 								</section>
 								
@@ -105,26 +105,22 @@ if(!(isset($_SESSION['user_name'])))
 					</div>
 
 				<!-- Main -->
-					
+					<br><br>
 
 	</div>
 
 	<!-- Footer -->
 		<div id="footer" class="wrapper style2">
-			<div class="container" style="height: 15px;">
-				<section>
-					<header class="major">
-						<h4>SALLOW TV</h4>
-						<span class="byline">Enjoy ur days with Sallow.</span>
+
+			<section>
+					<header >
+						<h2>SWALLOW TV</h2><br>
+						<h3>Enjoy Your Days With Swallow.</h3><br><br><br>
+						<h5>Powered by Tearm swallow,  &nbspswallow777kerala@ac.in &nbsp ph: +91 8846521474</h5>
 						
 					</header>
 					
 				</section>
-			</div>
 		</div>
-
-	<!-- Copyright -->
-		
-
 	</body>
 </html>

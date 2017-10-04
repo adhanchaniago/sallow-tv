@@ -26,7 +26,7 @@ $qry="INSERT INTO `package`(`channel_id`, `status`, `p_name_id`) VALUES
 
 <html>
 	<head>
-		<title>Left Sidebar - Phase Shift by TEMPLATED</title>
+		<title>Tearm swallow add pack</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -51,13 +51,13 @@ $qry="INSERT INTO `package`(`channel_id`, `status`, `p_name_id`) VALUES
 				<!-- Header -->
 					<div id="header" class="skel-panels-fixed">
 						<div id="logo">
-							<h1><a href="index.html">SALLOW TV</a></h1>
-							<span class="tag">Enjoy ur days with Sallow.</span>
+							<h1>SALLOW TV</h1>
+							<span class="tag">Enjoy Your Days With Swallow.</span>
 						</div>
 						<nav id="nav">
 							<ul>
 								<li ><a href="ad_home.php">Home</a></li>
-								<li><a href="ad_new_pkge.php" >Add Package</a></li>
+								<li><a href="ad_new_pkge.php" >Add Channel List</a></li>
 								<li><a href="">Channel Details</a></li>
 								<li><a href="logout.php">Logout</a></li>
 							</ul>
@@ -82,25 +82,7 @@ $qry="INSERT INTO `package`(`channel_id`, `status`, `p_name_id`) VALUES
 		<header class="major">
 		<center><h3>Add Channel to package</h3></center>
 		</header>
-	<!--<label>Select scheme : </label>-->
-   <!-- <select name="schename" style="width:150px;">
-	<option>--Select--</option>
-            <?php
-                
-               // $sql = "SELECT `scheme_id`, `scheme_name`, `no_day`, `amount` FROM `package_scheme`;";
-               // $result = mysqli_query($con, $sql);
-              //  if (mysqli_num_rows($result) > 0) 
-                   {
-                     //  while($row = mysqli_fetch_assoc($result)) 
-                          {
-                           // $id=$row["scheme_id"]; 
-							//$catname=$row["scheme_name"];
-            ?>
-            
-            <option value="<?php //echo $id; ?>"><?php //echo $catname;?></option>
-                          <?php
-						  } }?>
-        </select> -->
+	
 			<br><br>
 			<label>Select pack_name : </label>
 			<select name="pkname" style="width:150px;">
@@ -121,7 +103,7 @@ $qry="INSERT INTO `package`(`channel_id`, `status`, `p_name_id`) VALUES
                           <?php
 						  } }?>
         </select> <br><br>
-		<label>Select Channel : </label>
+		<label>Select Channel &nbsp&nbsp : </label>
 		<select name="chnl" style="width:150px;">
 		<option>--Select--</option>
             <?php
@@ -158,16 +140,16 @@ $qry="INSERT INTO `package`(`channel_id`, `status`, `p_name_id`) VALUES
 				</section>
 	
 <div id="footer" class="wrapper style2">
-			<div class="container" style="height: 15px;">
-				<section>
-					<header class="major">
-						<h4>SALLOW TV</h4>
-						<span class="byline">Enjoy ur days with Sallow.</span>
+
+			<section>
+					<header >
+						<h2>SWALLOW TV</h2><br>
+						<h3>Enjoy Your Days With Swallow.</h3><br><br><br>
+						<h5>Powered by Tearm swallow,  &nbspswallow777kerala@ac.in &nbsp ph: +91 8846521474</h5>
 						
 					</header>
 					
 				</section>
-			</div>
 		</div>
 	</body>
 </html>
