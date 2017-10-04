@@ -1,17 +1,84 @@
 <?php
 include_once 'connect.php'; 
 session_start();
-if(!(isset($_SESSION['user_name'])))
+function send($sms, $to) {
+    
+        $sms = urlencode($sms);
+      
+            $url = 'http://sms.safechaser.com/httpapi/httpapi?token=2aecba933a06356672ba5848b9be58ee&sender=salwtv&number='.$to.'&route=2&type=1&sms='.$sms;
+        $ch = curl_init($url);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 50);
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 50);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $datares = curl_exec($ch);
+        curl_close($ch);
+        return $datares;
+    }
+function generateRandomString($length = 8) 
 {
-	header('location:index.php');
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $charactersLength = strlen($characters);
+    $randomString = '';
+    for ($i = 0; $i < $length; $i++) {
+        $randomString .= $characters[rand(0, $charactersLength - 1)];
+    }
+    return $randomString;
 }
+if(isset($_POST['change']))
+{
+$eml=$_POST["email"];
+$mob=$_POST["mob"];
+$key = generateRandomString();
+$sql="SELECT * FROM `register`";
+$result=mysqli_query($con,$sql);
+while($row=mysqli_fetch_array($result))
+{
+	$i=$row['reg_id'];
+	$mob=$row['mob_no'];
+	$fn=$row['fname'];
+	
+	?>
+	
+	<?php
+	if($eml==  $row['email']&&$mob==$row['mob_no']&&$row['type_id']=='3')
+	     {
+		 $_SESSION['email']=$eml;
+		 $_SESSION['mob']=$mob;
+		 $_SESSION['utype']='3';
+		 $_SESSION['id']=$i;
+		 
+		 $sql1="UPDATE `login` SET `password`='$key' WHERE `reg_id`='$i';";
+         $result=mysqli_query($con,$sql1);
+		 $msg="Hai $fn, Enjoy your Day with us..!  YOUR NEW PASSWORD: $key, TEARM-SWALLOW";
+ send($msg, $mob);
+		 header('location:login.php');
+		 }
+		 elseif($eml==  $row['email']&&$mob==$row['mob_no']&&$row['type_id']=='2')
+	     {
+		 $_SESSION['email']=$eml;
+		 $_SESSION['mob']=$mob;
+		 $_SESSION['utype']='2';
+		 $_SESSION['id']=$i;
+		 
+		 $sql1="UPDATE `login` SET `password`='$key' WHERE `reg_id`='$i';";
+         $result=mysqli_query($con,$sql1);
+		 $msg="Hai $fn, Enjoy your Day with us..!  YOUR NEW PASSWORD: $key, TEARM-SWALLOW";
+ send($msg, $mob);
+		 header('location:login.php');
+		 }
+		 else{
+		echo "<script>if(confirm('Email id and Mobile number are incorect!!!!')){document.location.href='index.php'}else{document.location.href='register.php'};</script>";
+	     }
+}
+}
+
 ?>
 
 <!DOCTYPE HTML>
 
 <html>
 	<head>
-		<title>Left Sidebar - Phase Shift by TEMPLATED</title>
+		<title>swallow reset paswd</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -36,16 +103,14 @@ if(!(isset($_SESSION['user_name'])))
 				<!-- Header -->
 					<div id="header" class="skel-panels-fixed">
 						<div id="logo">
-							<h1><a href="index.html">SALLOW TV</a></h1>
-							<span class="tag">Enjoy ur days with Sallow.</span>
+							<h1>SWALLOW TV</h1>
+							<span class="tag">Enjoy Your Days With Swallow.</span>
 						</div>
 						<nav id="nav">
-							<ul><li><a href="usrhme.php">User Details</a></li>
-							<li><a href="user_packs.php">Avilable Packages</a></li>
-								<li><a href="usr_own_pack_det.php">Your Package</a></li>
-								<li><a href="usr_chnls.php">Avilable Channels</a></li>
+							<ul>
+							<li><a href="index.php">Home</a></li>
+	 							<li><a href="login.php">Login</a></li>
 								
-								<li><a href="logout.php">Logout</a></li>
 							</ul>
 						</nav>
 					</div>
@@ -57,7 +122,7 @@ if(!(isset($_SESSION['user_name'])))
 		
 									
 	<div>
-<center><form
+<center><form name="fgt" action="change_pswd.php" method="post" id="fpswd"
 			style="border:2px solid #DC6180;
                   background-color: #ffc0cb;
 						 margin:15px 250px 10px 250px;
@@ -70,29 +135,29 @@ if(!(isset($_SESSION['user_name'])))
 										
 		</header>
 					  
-					 <input type="text" name="password" placeholder="Old Password" required=" " style="width: 310px;"><br>
-					<input type="text" name="password" placeholder="New Password" required=" " style="width: 310px;"><br>
+					 <input type="text" name="email" placeholder="Enter Your email-id" required=" " style="width: 310px;"><br>
+					<input type="text" name="mob" placeholder="Enter Mobile Number" required=" " style="width: 310px;"><br>
 		</input>
 	
 	<br>
 
 	
-		<input type='submit' name="change" value='Change'></form></center>
+		<input type='submit' name="change" value='Change'><br></form></center>
 		</div>
 
 				</section><br><br><br><br>
 	
 <div id="footer" class="wrapper style2">
-			<div class="container" style="height: 15px;">
-				<section>
-					<header class="major">
-						<h4>SALLOW TV</h4>
-						<span class="byline">Enjoy ur days with Sallow.</span>
+
+			<section>
+					<header >
+						<h2>SWALLOW TV</h2><br>
+						<h3>Enjoy Your Days With Swallow.</h3><br><br><br>
+						<h5>Powered by Tearm swallow,  &nbspswallow777kerala@ac.in &nbsp ph: +91 8846521474</h5>
 						
 					</header>
 					
 				</section>
-			</div>
 		</div>
 	</body>
 </html>

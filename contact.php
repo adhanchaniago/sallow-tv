@@ -51,49 +51,32 @@ include_once 'connect.php'; //database connection page
 			<!--footer-->
 			</br></br></br></br></br>
 						<!-- Footer -->
-						<footer id="footer">
-							<hr style="border-width: 1px; color:#DC6180; ">
-							<div class="inner">
-								<table style="margin-left:50px;"><tr>
-									<td><img src="images/surya.png" alt="surya" style="width:65px;height:60px;"></td>
-									<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
-									<td><img src="images/asianet.png" alt="surya" style="width:50px;height:50px;"></td>
-									<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
-									<td><img src="images/kairali.png" alt="surya" style="width:50px;height:50px;"></td>
-
-									<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
-									<td><img src="images/and.png" alt="surya" style="width:85px;height:60px;"></td>
-									<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
-									<td><img src="images/discovery.png" alt="surya" style="width:100px;height:60px;"></td>
-
-
-									<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
-									<td><img src="images/Star_Plus.png" alt="surya" style="width:70px;height:70px;"></td>
-									<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
-
-								</tr></table>
-								<h2 style="font-size: 35px;">Swallow TV</h2>
-								<p>From where it happens, we see it happen.</p>
-								<center><table  >
-					<tr><td><a  style="
-						color: white; text-decoration: none;" href="index.php">
-			HOME&nbsp&nbsp|&nbsp&nbsp
-			</a></td>
-			<td ><a  style="
-				color: white; text-decoration: none;" href="pack.php">
-			PACKAGES&nbsp&nbsp|&nbsp&nbsp
-			</a></td>
-			<td><a  style="
-				color: white; text-decoration: none;" href="contact.php">
-			CONTACT US&nbsp&nbsp|&nbsp&nbsp
-			</a></td>
-			 
-			<td ><a  style="
-				color: white; text-decoration: none;" href="login.php" >
-			LOGIN<br>
-			</a></td></tr></table></center>
-							</div>
-						</footer>
+						<footer id="footer" >
+				<hr style="border-width: 3px; color:#DC6180; ">
+				<div class="inner">
+					
+					<h2 style="font-size: 35px; color: #DC6180;">Swallow TV</h2>
+					<p style="color: #DC6180;">From where it happens, we see it happen.</p>
+					<center><table  >
+		<tr><td><a  style="
+			color: #DC6180; text-decoration: none;" href="index.php">
+HOME&nbsp&nbsp|&nbsp&nbsp
+</a></td>
+<td ><a  style="
+	color: #DC6180; text-decoration: none;" href="pack.php">
+PACKAGES&nbsp&nbsp|&nbsp&nbsp
+</a></td>
+<td><a  style="
+	color: #DC6180; text-decoration: none;" href="contact.php">
+CONTACT US&nbsp&nbsp|&nbsp&nbsp
+</a></td>
+ 
+<td ><a  style="
+	color: #DC6180; text-decoration: none;" href="login.php" >
+LOGIN<br>
+</a></td></tr></table></center>
+				</div>
+			</footer>
 
 
 		<!-- Scripts -->

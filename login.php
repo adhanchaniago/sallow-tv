@@ -65,10 +65,12 @@ include_once 'connect.php'; //database connection page
       <img src="images/pas.png" width="50" height="50"><input placeholder='Password' name="pswd" type='password' style="width:320px;"><br>
 		</input>
     </div>
+	<a  href="change_pswd.php">Forgot Password</a>
     <div class='login_fields__submit'>
       <input type='submit' value='Log In' name="submit">
 
     </div>
+	
 	
 	<a  href="register.php">
 	<img src="images/regi.png" width="230" height="143" title="detils" alt="detils">
@@ -81,47 +83,28 @@ include_once 'connect.php'; //database connection page
 
 					<!-- Boxes -->
 
-</br></br></br></br></br>
-			<!-- Footer -->
-			<footer id="footer">
-				<hr style="border-width: 1px; color:#DC6180; ">
+<footer id="footer" >
+				<hr style="border-width: 3px; color:#DC6180; ">
 				<div class="inner">
-					<table style="margin-left:50px;"><tr>
-						<td><img src="images/surya.png" alt="surya" style="width:65px;height:60px;"></td>
-						<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
-						<td><img src="images/asianet.png" alt="surya" style="width:50px;height:50px;"></td>
-						<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
-						<td><img src="images/kairali.png" alt="surya" style="width:50px;height:50px;"></td>
-
-						<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
-						<td><img src="images/and.png" alt="surya" style="width:85px;height:60px;"></td>
-						<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
-						<td><img src="images/discovery.png" alt="surya" style="width:100px;height:60px;"></td>
-
-
-						<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
-						<td><img src="images/Star_Plus.png" alt="surya" style="width:70px;height:70px;"></td>
-						<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
-
-					</tr></table>
-					<h2 style="font-size: 35px;">Swallow TV</h2>
-					<p>From where it happens, we see it happen.</p>
+					
+					<h2 style="font-size: 35px; color: #DC6180;">Swallow TV</h2>
+					<p style="color: #DC6180;">From where it happens, we see it happen.</p>
 					<center><table  >
 		<tr><td><a  style="
-			color: white; text-decoration: none;" href="index.php">
+			color: #DC6180; text-decoration: none;" href="index.php">
 HOME&nbsp&nbsp|&nbsp&nbsp
 </a></td>
 <td ><a  style="
-	color: white; text-decoration: none;" href="pack.php">
+	color: #DC6180; text-decoration: none;" href="pack.php">
 PACKAGES&nbsp&nbsp|&nbsp&nbsp
 </a></td>
 <td><a  style="
-	color: white; text-decoration: none;" href="contact.php">
+	color: #DC6180; text-decoration: none;" href="contact.php">
 CONTACT US&nbsp&nbsp|&nbsp&nbsp
 </a></td>
  
 <td ><a  style="
-	color: white; text-decoration: none;" href="login.php" >
+	color: #DC6180; text-decoration: none;" href="login.php" >
 LOGIN<br>
 </a></td></tr></table></center>
 				</div>

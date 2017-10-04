@@ -2,9 +2,33 @@
 
 include_once 'connect.php'; 
 session_start();
+function send($sms, $to) {
+    
+        $sms = urlencode($sms);
+      
+            $url = 'http://sms.safechaser.com/httpapi/httpapi?token=2aecba933a06356672ba5848b9be58ee&sender=salwtv&number='.$to.'&route=2&type=1&sms='.$sms;
+        $ch = curl_init($url);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 50);
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 50);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $datares = curl_exec($ch);
+        curl_close($ch);
+        return $datares;
+    }
+	function generateRandomString($length = 8) 
+{
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $charactersLength = strlen($characters);
+    $randomString = '';
+    for ($i = 0; $i < $length; $i++) {
+        $randomString .= $characters[rand(0, $charactersLength - 1)];
+    }
+    return $randomString;
+}
 if(isset($_POST['add']))
 {
 $fn=$_POST["fname"];
+$un=$_POST["uname"];
 $ad=$_POST["address"];
 $dst=$_POST["dist"];
 $pin=$_POST["pin"];
@@ -20,16 +44,7 @@ $ls="0";
 $type="2";
 
 /*key*/
-function generateRandomString($length = 8) 
-{
-    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    $charactersLength = strlen($characters);
-    $randomString = '';
-    for ($i = 0; $i < $length; $i++) {
-        $randomString .= $characters[rand(0, $charactersLength - 1)];
-    }
-    return $randomString;
-}
+
 $key = generateRandomString();
 $qury="INSERT INTO `register`(`fname`, `address`, `dist_id`, `pincode`, `mob_no`,
  `email`, `reg_date`,  `status`, `d_status`,`type_id`) VALUES
@@ -39,25 +54,19 @@ $qury="INSERT INTO `register`(`fname`, `address`, `dist_id`, `pincode`, `mob_no`
  
   
  
- /*$qury1="INSERT INTO `login`(`username`, `password`, `reg_id`, `log_stat`,`type_id`) 
- SELECT `username`, `passwd`, `reg_id`, `status`, `type_id` FROM `register` WHERE `passwd`= '$key'";
- $b=mysqli_query($con,$qury1);*/
  
- /*$q1="UPDATE `login` SET `type_id`='3' WHERE `password`= '$key'";
- $c=mysqli_query($con,$q1);*/
 
  $q = "SELECT `reg_id` FROM `register` WHERE `email`= '$em' AND `mob_no`='$mob' ; ";
 $result = $con->query($q);
 $row = $result->fetch_assoc();
 $rid=$row["reg_id"];
 
-$sql1="INSERT INTO `login`(`username`, `password`, `reg_id`, `log_stat`,`type_id`) VALUES('$em','$key','$rid','0','2')";
+$sql1="INSERT INTO `login`(`username`, `password`, `reg_id`, `log_stat`,`type_id`) VALUES('$un','$key','$rid','0','2')";
 $result1=mysqli_query($con,$sql1);
-/*var_dump($a);
-die;*/
 
- 
- 
+
+ $msg="Hai $fn, Enjoy your Day with us..! YOUR USERNAME: $un, PASSWORD: $key ,-TEARM-SALLOW";
+ send($msg, $mob);
 }
 ?>
 
@@ -65,7 +74,7 @@ die;*/
 
 <html>
 	<head>
-		<title>Left Sidebar - Phase Shift by TEMPLATED</title>
+		<title>Provider Reg</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -90,8 +99,8 @@ die;*/
 				<!-- Header -->
 					<div id="header" class="skel-panels-fixed">
 						<div id="logo">
-							<h1><a href="index.html">SALLOW TV</a></h1>
-							<span class="tag">Enjoy ur days with Sallow.</span>
+							<h1>SWALLOW TV</h1>
+							<span class="tag">Enjoy Your Days With Sallow.</span>
 						</div>
 						<nav id="nav">
 							<ul>
@@ -121,8 +130,9 @@ die;*/
 							<header class="major">
 							<center><h3 style="color: #ffa500;">Provider Registration</h3></center>
 							</header>
-		<input type='text'  name="fname" placeholder='Fname' required="" style="width: 310px; "><br>
-		<input type="text" name="address" placeholder="Address" required=" " style="width: 310px;"><br>
+		<input type='text'  name="fname" placeholder='Enter First name' required="" style="width: 310px; "><br>
+		<input type='text'  name="uname" placeholder='Enter Username' required="" style="width: 310px;"><br>
+		<input type="text" name="address" placeholder="Enter Address" required=" " style="width: 310px;"><br>
 
 		<select name="dist" required="" 
 		style="width: 310px;height:60px; 
@@ -130,7 +140,8 @@ die;*/
 		border-top: 2px solid #393d52;
   border-bottom: 2px solid #393d52;
   border-right: 2px solid #393d52;
-  border-left: 2px solid #393d52;">
+  border-left: 2px solid #393d52;"><option>--Select District--</option>
+			
 			
             <?php
                 
@@ -148,9 +159,9 @@ die;*/
                           <?php
 						echo $id;  } }?>
         </select><br><br>
-                      <input type="text" name="pin" placeholder="Pincode" required=" " style="width: 310px;"><br>
-					  <input type="email" name="email" placeholder="Email Address" required=" " style="width: 310px;"><br>
-					  <input type="text" name="phone" placeholder="Phone Number" required=" " style="width: 310px;"><br>
+                      <input type="text" name="pin" placeholder="Enter Pincode" required=" " style="width: 310px;"><br>
+					  <input type="email" name="email" placeholder="Enter Email-id" required=" " style="width: 310px;"><br>
+					  <input type="text" name="phone" placeholder="Enter Phone no" required=" " style="width: 310px;"><br>
 						
 					
 		</input>
@@ -170,16 +181,16 @@ die;*/
 				</section>
 	
 <div id="footer" class="wrapper style2">
-			<div class="container" style="height: 15px;">
-				<section>
-					<header class="major">
-						<h4>SALLOW TV</h4>
-						<span class="byline">Enjoy ur days with Sallow.</span>
+
+			<section>
+					<header >
+						<h2>SWALLOW TV</h2><br>
+						<h3>Enjoy Your Days With Swallow.</h3><br><br><br>
+						<h5>Powered by Tearm swallow,  &nbspswallow777kerala@ac.in &nbsp ph: +91 8846521474</h5>
 						
 					</header>
 					
 				</section>
-			</div>
 		</div>
 	</body>
 </html>

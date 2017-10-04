@@ -6,14 +6,23 @@ if(!(isset($_SESSION['user_name'])))
 {
 	header('location:index.php');
 }
+$usr=$_SESSION['user_name'];
+ $q = "SELECT  `reg_id` FROM `login` WHERE `username`='$usr' ";
+$result = $con->query($q);
+$row = $result->fetch_assoc();
+$rid=$row["reg_id"];
 
+$q1 = "SELECT `fname` FROM `register` WHERE `reg_id`='$rid' ";
+$result1 = $con->query($q1);
+$row1 = $result1->fetch_assoc();
+$nm=$row1["fname"];
 ?>
 
 <!DOCTYPE HTML>
 
 <html>
 	<head>
-		<title>Left Sidebar - Phase Shift by TEMPLATED</title>
+		<title>swallow user</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -38,15 +47,15 @@ if(!(isset($_SESSION['user_name'])))
 				<!-- Header -->
 					<div id="header" class="skel-panels-fixed">
 						<div id="logo">
-							<h1><a href="index.html">SALLOW TV</a></h1>
-							<span class="tag">Enjoy ur days with Sallow.</span>
+							<h1>SWALLOW TV</h1>
+							<span class="tag">Enjoy Your Days With Swallow.</span>
 						</div>
 						<nav id="nav">
 							<ul>
 								<li><a href="user_packs.php">Suscribe Packages</a></li>
 								<li><a href="usr_own_pack_det.php">Your Package</a></li>
 								<li><a href="usr_chnls.php">Avilable Channels</a></li>
-								<li><a href="change_pswd.php">Change Password</a></li>
+								<li><a href="">Change Password</a></li>
 								<li><a href="logout.php">Logout</a></li>
 							</ul>
 						</nav>
@@ -67,7 +76,7 @@ if(!(isset($_SESSION['user_name'])))
 							"><br><br><br>
 		
 				<header class="major">
-				<center><h3 style="color: #ffa500;">Welcome <?php echo($_SESSION['user_name'])?></h3></center>
+				<center><h3 style="color: #ffa500;">WELCOME &nbsp <?php echo ( $nm ); ?></h3></center>
 </header>
 	
 
@@ -117,16 +126,16 @@ while($row=mysqli_fetch_array($results))
 				</section><br><br><br><br>
 	
 <div id="footer" class="wrapper style2">
-			<div class="container" style="height: 15px;">
-				<section>
-					<header class="major">
-						<h4>SALLOW TV</h4>
-						<span class="byline">Enjoy ur days with Sallow.</span>
+
+			<section>
+					<header >
+						<h2>SWALLOW TV</h2><br>
+						<h3>Enjoy Your Days With Swallow.</h3><br><br><br>
+						<h5>Powered by Tearm swallow,  &nbspswallow777kerala@ac.in &nbsp ph: +91 8846521474</h5>
 						
 					</header>
 					
 				</section>
-			</div>
 		</div>
 	</body>
 </html>

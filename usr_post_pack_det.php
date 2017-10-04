@@ -12,7 +12,7 @@ $id=$_REQUEST['p_name_id'];
 
 <html>
 	<head>
-		<title>Left Sidebar - Phase Shift by TEMPLATED</title>
+		<title>post packages</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -37,15 +37,15 @@ $id=$_REQUEST['p_name_id'];
 				<!-- Header -->
 					<div id="header" class="skel-panels-fixed">
 						<div id="logo">
-							<h1><a href="index.html">SALLOW TV</a></h1>
-							<span class="tag">Enjoy ur days with Sallow.</span>
+							<h1>SWALLOW TV</h1>
+							<span class="tag">Enjoy Your Days With Swallow.</span>
 						</div>
 						<nav id="nav">
 							<ul>
-								<li><a href="usrhme.php">User Details</a></li>
+								<li><a href="usrhme.php">Home</a></li>
 								<li><a href="usr_own_pack_det.php">Your Package</a></li>
 								<li><a href="usr_chnls.php">Avilable Channels</a></li>
-								<li><a href="change_pswd.php">Change Password</a></li>
+								
 								<li><a href="logout.php">Logout</a></li>
 							</ul>
 						</nav>
@@ -78,7 +78,7 @@ while($row=mysqli_fetch_array($results))
 ?>
 
 
-<tr><td><input name="unme" type="text" value="<?php echo $row['c_name']; ?>"/></td></tr>
+<tr><td><input name="unme" type="text" value="<?php echo $row['c_name']; ?>" readonly /></td></tr>
 <tr><td><img src="channel/<?php echo $row['logo'];?>" alt=" " height="75" width="75"></td></tr>
 <!--<tr><td><input name="dist" type="text" value="<?php //echo $row['discripition']; ?>"/></td></tr>-->
 
@@ -104,16 +104,16 @@ while($row=mysqli_fetch_array($results))
 				</section>
 	
 <div id="footer" class="wrapper style2">
-			<div class="container" style="height: 15px;">
-				<section>
-					<header class="major">
-						<h4>SALLOW TV</h4>
-						<span class="byline">Enjoy ur days with Sallow.</span>
+
+			<section>
+					<header >
+						<h2>SWALLOW TV</h2><br>
+						<h3>Enjoy Your Days With Swallow.</h3><br><br><br>
+						<h5>Powered by Tearm swallow,  &nbspswallow777kerala@ac.in &nbsp ph: +91 8846521474</h5>
 						
 					</header>
 					
 				</section>
-			</div>
 		</div>
 	</body>
 </html>
