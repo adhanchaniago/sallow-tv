@@ -10,6 +10,7 @@ if(!(isset($_SESSION['user_name'])))
 
 <html>
 	<head>
+	
 		<title>Provider details</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
@@ -26,6 +27,7 @@ if(!(isset($_SESSION['user_name'])))
 			<link rel="stylesheet" href="css/style-wide.css" />
 		</noscript>
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+	
 	</head>
 	<body>
 
@@ -41,7 +43,7 @@ if(!(isset($_SESSION['user_name'])))
 						<nav id="nav">
 							<ul>
 								<li ><a href="pro_home.php">Home</a></li>
-						<li ><a href="pro_ch_pswd.php">Change Password</a></li>
+								<li ><a href="pro_ch_pswd.php">Change Password</a></li>
 								<li><a href="logout.php">Logout</a></li>
 							</ul>
 						</nav>
@@ -54,28 +56,28 @@ if(!(isset($_SESSION['user_name'])))
 									
 									<center>
 	
-<form name="avil_usr" action="" method="post" "
-style=" background-size: cover;"><br><br><br>
+<form name="avil_usr" action="" method="post" style=" background-size: cover;"><br><br><br>
 			<header class="major">
-			<center><h3 style="color: #ffa500;">Online Users</h3></center>
+			<center><h3 style="color: #ffa500;">Users feed backs</h3></center>
 			</header>
+<table  style="border-collapse: collapse;
+    width: 100%; " >
 
-<table >
-
-  <tr style="background-color: #4CAF50; color: #fff;">
+  <tr >
     <!--<td><font color="black">&nbsp;Id</font></td>-->
-    <td>First Name</td>
+    <td>Accountent name</td>
     
-    <td>Mobile</td>
-	
+    <td>Date of issue</td>
+
+	<td>Complaint</td>
+	<td>Action</td>
 	
     
 	</tr>
 <?php
 
-$results=mysqli_query($con,"SELECT `register`.`reg_id`, `register`.`fname`
-, `register`.`mob_no` FROM `register`
-,`login` WHERE `register`.`reg_id`=`login`.`reg_id` AND `register`.`type_id`='3' AND `login`.`log_stat`='1';");
+$results=mysqli_query($con,"SELECT `register`.`fname`,`complaints`.`sd_date`,`complaints`.`body` 
+FROM `complaints`,`register` WHERE `register`.`reg_id`=`complaints`.`reg_id`;");
 while($row=mysqli_fetch_array($results))
 	
 {
@@ -84,14 +86,18 @@ while($row=mysqli_fetch_array($results))
 <tr style="background-color: #fff;  border: 2px solid #4CAF50;">
 <!--<td><input name="id" type="id" value="<?php// echo $row['reg_id']; ?>"/></td>-->
 <td><input name="name" type="text" value="<?php echo $row['fname']; ?>" readonly /></td>
+<td><input name="adrs" type="text" value="<?php echo $row['sd_date']; ?>" readonly /></td>
+<td ><input name="mob" type="text" value="<?php echo $row['body']; ?>" readonly  /></td>
 
-<td><input name="mob" type="text" value="<?php echo $row['mob_no']; ?>" readonly /></td>
+
+<!--<td><input name="dist" type="text" value="<?php// echo $row['dist_name']; ?>" readonly /></td>-->
+
 
 
 </tr>
 <?php } ?>
 </table>
-					
+	
 </form>
 
 	

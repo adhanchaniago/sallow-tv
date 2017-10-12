@@ -1,16 +1,43 @@
 <?php
 include_once 'connect.php'; 
 session_start();
+$i = $_SESSION['id'];
 if(!(isset($_SESSION['user_name'])))
 {
 	header('location:index.php');
 }
+$usr=$_SESSION['user_name'];
+ $q = "SELECT `login_id`, `username`, `password`, `type_id`, `reg_id`, `log_stat` FROM `login` WHERE `username`='$usr' ";
+$result = $con->query($q);
+$row = $result->fetch_assoc();
+$p=$row["password"];
+$i=$row["login_id"];
+$t=$row["type_id"];
+if(isset($_POST['change']))
+{
+$op=$_POST["oldpswd"];
+$np=$_POST["newpswd"];
+
+if($op == $p && $t == '3')
+	     {
+		
+		 $sql1="UPDATE `login` SET `password`='$np' WHERE `login_id`='$i' ";
+         $result=mysqli_query($con,$sql1);
+		 header('location:user_home.php');
+		 }
+		 
+		 else{
+		echo "<script>if(confirm('your old assword is incorect!!!!')){document.location.href='usr_pro_change_pswd.php'}else{document.location.href='user_home.php'};</script>";
+	     }
+ 
+}
+
 ?>
 <!DOCTYPE HTML>
 
 <html>
 	<head>
-		<title>Provider details</title>
+		<title>user pack</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -40,8 +67,8 @@ if(!(isset($_SESSION['user_name'])))
 						</div>
 						<nav id="nav">
 							<ul>
-								<li ><a href="pro_home.php">Home</a></li>
-						<li ><a href="pro_ch_pswd.php">Change Password</a></li>
+								<li ><a href="user_home.php">Home</a></li>
+								<li ><a href="usr_pro_change_pswd.php">Change Password</a></li>
 								<li><a href="logout.php">Logout</a></li>
 							</ul>
 						</nav>
@@ -53,52 +80,32 @@ if(!(isset($_SESSION['user_name'])))
 								<section>
 									
 									<center>
+	<div>
+<form action="usr_pro_change_pswd.php" method="post"
+			style=" background-size: cover;">
+							
+	<header class="major">
+	<center><h3>Change Your Password</h3></center></header>
+	<input type="text" name="oldpswd" placeholder="Enter Your current password" required=" " style="width: 310px;"><br>
+					<input type="text" name="newpswd" placeholder="Enter New password" required=" " style="width: 310px;"><br>
+		</input>
 	
-<form name="avil_usr" action="" method="post" "
-style=" background-size: cover;"><br><br><br>
-			<header class="major">
-			<center><h3 style="color: #ffa500;">Online Users</h3></center>
-			</header>
+	<br>
 
-<table >
-
-  <tr style="background-color: #4CAF50; color: #fff;">
-    <!--<td><font color="black">&nbsp;Id</font></td>-->
-    <td>First Name</td>
-    
-    <td>Mobile</td>
 	
-	
-    
-	</tr>
-<?php
+		<input type='submit' name="change" value='Change'><br>
+		
 
-$results=mysqli_query($con,"SELECT `register`.`reg_id`, `register`.`fname`
-, `register`.`mob_no` FROM `register`
-,`login` WHERE `register`.`reg_id`=`login`.`reg_id` AND `register`.`type_id`='3' AND `login`.`log_stat`='1';");
-while($row=mysqli_fetch_array($results))
-	
-{
-
-?>
-<tr style="background-color: #fff;  border: 2px solid #4CAF50;">
-<!--<td><input name="id" type="id" value="<?php// echo $row['reg_id']; ?>"/></td>-->
-<td><input name="name" type="text" value="<?php echo $row['fname']; ?>" readonly /></td>
-
-<td><input name="mob" type="text" value="<?php echo $row['mob_no']; ?>" readonly /></td>
-
-
-</tr>
-<?php } ?>
-</table>
-					
-</form>
+	</form></div>
 
 	
 </div></center>
-	
+
+					
+						
+					
+					
 				</section>
-				
 	
 <div id="footer" class="wrapper style2">
 

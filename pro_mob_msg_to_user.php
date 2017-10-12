@@ -23,7 +23,7 @@ if(isset($_POST['submit']))
 	
 $mob=$_POST["usrmob"];
 $txt=$_POST["txt"];
-$msg="Hai Friend Enjoy your Day with us..!  $txt, TEARM-SWALLOW";
+$msg=" $txt";
  send($msg, $mob);
 
 
@@ -64,8 +64,7 @@ $msg="Hai Friend Enjoy your Day with us..!  $txt, TEARM-SWALLOW";
 						<nav id="nav">
 							<ul>
 								<li ><a href="pro_home.php">Home</a></li>
-								<li><a href="pro_mob_msg_to_user.php">Send Message</a></li>
-								<li><a href="pro_mob_msg_to_user.php">Feed Back</a></li>
+								<li ><a href="pro_ch_pswd.php">Change Password</a></li>
 								<li><a href="logout.php">Logout</a></li>
 							</ul>
 						</nav>
@@ -79,10 +78,7 @@ $msg="Hai Friend Enjoy your Day with us..!  $txt, TEARM-SWALLOW";
 									<center>
 	
 <form name="sndmsg" action="pro_mob_msg_to_user.php" method="post" id="msg"
-style="border:.5px solid #DC6180;
-                  background-color: #ffc0cb;
-						 margin:1px 50px 10px 20px;
-						 background-size: cover;
+style=" background-size: cover;
 							"><br><br><br>
 			<header class="major">
 			<center><h3 style="color: #ffa500;">Send Message To User </h3></center>

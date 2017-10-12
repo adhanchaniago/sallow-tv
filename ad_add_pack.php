@@ -5,12 +5,27 @@ if(!(isset($_SESSION['user_name'])))
 {
 	header('location:index.php');
 }
+
+if(isset($_POST['add']))
+{
+$pk=$_POST["adpk"];
+$pim=$_POST["picn"];
+
+
+
+
+
+$qry="INSERT INTO `pack_name`(`p_name`, `p_icon`) VALUES ('$pk','$pim')";
+ 
+ 
+ $a=mysqli_query($con,$qry);
+}
 ?>
 <!DOCTYPE HTML>
 
 <html>
 	<head>
-		<title>Provider details</title>
+		<title>Tearm swallow</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -40,8 +55,9 @@ if(!(isset($_SESSION['user_name'])))
 						</div>
 						<nav id="nav">
 							<ul>
-								<li ><a href="pro_home.php">Home</a></li>
-						<li ><a href="pro_ch_pswd.php">Change Password</a></li>
+								<li ><a href="ad_home.php">Home</a></li>
+								<li><a href="ad_add_pack.php" >Add Package</a></li>
+								<li><a href="ad_package_det_edit.php">Package Details</a></li>
 								<li><a href="logout.php">Logout</a></li>
 							</ul>
 						</nav>
@@ -53,52 +69,37 @@ if(!(isset($_SESSION['user_name'])))
 								<section>
 									
 									<center>
+	<div>
+<form  name="adpack" action="ad_add_pack.php" method="post" id="form"
+			style="border:2px solid #DC6180;
+                  background-color: #fff;
+						 margin:15px 250px 10px 250px;
+						 background-size: cover;
+							"><br>
+							
+			
+		<header class="major">
+		<center><h3>Add Channel to package</h3></center>
+		</header>
+		
+		
+	<input type="text" name="adpk" placeholder="Enter package name" required=" " style="width: 310px;"><br><br>
+	<label>Choose package icon: </label><input type="file" name="picn" id="fileToUpload" accept="image/*"><br><br>
+		<input type='submit' name="add" value='SAVE'>
+		
+		
+		
+		
+		</form></form></div>
+
 	
-<form name="avil_usr" action="" method="post" "
-style=" background-size: cover;"><br><br><br>
-			<header class="major">
-			<center><h3 style="color: #ffa500;">Online Users</h3></center>
-			</header>
+</center>
 
-<table >
-
-  <tr style="background-color: #4CAF50; color: #fff;">
-    <!--<td><font color="black">&nbsp;Id</font></td>-->
-    <td>First Name</td>
-    
-    <td>Mobile</td>
-	
-	
-    
-	</tr>
-<?php
-
-$results=mysqli_query($con,"SELECT `register`.`reg_id`, `register`.`fname`
-, `register`.`mob_no` FROM `register`
-,`login` WHERE `register`.`reg_id`=`login`.`reg_id` AND `register`.`type_id`='3' AND `login`.`log_stat`='1';");
-while($row=mysqli_fetch_array($results))
-	
-{
-
-?>
-<tr style="background-color: #fff;  border: 2px solid #4CAF50;">
-<!--<td><input name="id" type="id" value="<?php// echo $row['reg_id']; ?>"/></td>-->
-<td><input name="name" type="text" value="<?php echo $row['fname']; ?>" readonly /></td>
-
-<td><input name="mob" type="text" value="<?php echo $row['mob_no']; ?>" readonly /></td>
-
-
-</tr>
-<?php } ?>
-</table>
 					
-</form>
-
-	
-</div></center>
-	
+						
+					
+					
 				</section>
-				
 	
 <div id="footer" class="wrapper style2">
 

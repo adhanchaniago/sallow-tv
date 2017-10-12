@@ -10,7 +10,7 @@ if(!(isset($_SESSION['user_name'])))
 
 <html>
 	<head>
-		<title>Provider details</title>
+		<title>Tearm swallow</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -40,8 +40,9 @@ if(!(isset($_SESSION['user_name'])))
 						</div>
 						<nav id="nav">
 							<ul>
-								<li ><a href="pro_home.php">Home</a></li>
-						<li ><a href="pro_ch_pswd.php">Change Password</a></li>
+								<li ><a href="ad_home.php">Home</a></li>
+								<li><a href="ad_add_pack.php" >Add Package</a></li>
+								<li><a href="ad_package_det_edit.php">Package Details</a></li>
 								<li><a href="logout.php">Logout</a></li>
 							</ul>
 						</nav>
@@ -53,52 +54,63 @@ if(!(isset($_SESSION['user_name'])))
 								<section>
 									
 									<center>
-	
-<form name="avil_usr" action="" method="post" "
-style=" background-size: cover;"><br><br><br>
-			<header class="major">
-			<center><h3 style="color: #ffa500;">Online Users</h3></center>
-			</header>
-
-<table >
+	<div>
+<form
+			style="border:2px solid #DC6180;
+                  background-color: #fff;
+						 margin:15px 250px 10px 250px;
+						 background-size: cover;
+							">
+							<header class="major">
+										<center><h3>Package Details</h3></center>
+										
+									</header>
+									
+									<table >
 
   <tr style="background-color: #4CAF50; color: #fff;">
-    <!--<td><font color="black">&nbsp;Id</font></td>-->
-    <td>First Name</td>
     
-    <td>Mobile</td>
+    <td>Package name</td>
 	
+    <td>Package Icon</td>
 	
+	<td>Edit</td>
+	<td>Delete</td>
     
 	</tr>
 <?php
 
-$results=mysqli_query($con,"SELECT `register`.`reg_id`, `register`.`fname`
-, `register`.`mob_no` FROM `register`
-,`login` WHERE `register`.`reg_id`=`login`.`reg_id` AND `register`.`type_id`='3' AND `login`.`log_stat`='1';");
+$results=mysqli_query($con,"SELECT `p_name_id`, `p_name`, `p_icon` FROM `pack_name`;");
 while($row=mysqli_fetch_array($results))
 	
 {
 
 ?>
 <tr style="background-color: #fff;  border: 2px solid #4CAF50;">
-<!--<td><input name="id" type="id" value="<?php// echo $row['reg_id']; ?>"/></td>-->
-<td><input name="name" type="text" value="<?php echo $row['fname']; ?>" readonly /></td>
+<!--<td><input name="id" type="" value="<?php// echo $row['p_name_id']; ?>"/></td>-->
 
-<td><input name="mob" type="text" value="<?php echo $row['mob_no']; ?>" readonly /></td>
+<td><input name="ctype" type="text" value="<?php echo $row['p_name']; ?>"/></td>
+<td><img src="package/<?php echo $row['p_icon'];?>" alt=" " height="75" width="75"></td>
 
 
+<td><a href="ad_pro_edit.php?tid=<?php echo $row['p_name_id'];?>" >
+<img src="images/edit.png" width="30" height="38" title="edit" alt="edit"></a></td>
+<td><a href="ad_pro_edit.php?tid=<?php echo $row['p_name_id'];?>">
+<img src="images/delete.png" width="35" height="35" title="dlt" alt="delet"></a></td>
 </tr>
 <?php } ?>
 </table>
-					
-</form>
+							
+							</form></div>
 
 	
 </div></center>
-	
+
+					
+						
+					
+					
 				</section>
-				
 	
 <div id="footer" class="wrapper style2">
 

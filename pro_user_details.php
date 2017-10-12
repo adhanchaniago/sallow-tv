@@ -41,7 +41,7 @@ if(!(isset($_SESSION['user_name'])))
 						<nav id="nav">
 							<ul>
 								<li ><a href="pro_home.php">Home</a></li>
-								<li><a href="pro_avilable_usrs.php">Avilable Users</a></li>
+								<li ><a href="pro_ch_pswd.php">Change Password</a></li>
 								<li><a href="logout.php">Logout</a></li>
 							</ul>
 						</nav>
@@ -55,11 +55,7 @@ if(!(isset($_SESSION['user_name'])))
 									<center>
 	
 <form
-style="border:.5px solid #DC6180;
-                  background-color: #ffc0cb;
-						 margin:1px 50px 10px 20px;
-						 background-size: cover;
-							"><br><br><br>
+style=" background-size: cover;"><br><br><br>
 			<header class="major">
 			<center><h3 style="color: #ffa500;">User Details</h3></center>
 			</header>

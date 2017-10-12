@@ -26,7 +26,7 @@ while($row=mysqli_fetch_array($result))
 		 
 		 $sql1="UPDATE `login` SET `log_stat`='1' WHERE login_id=$i";
          $result=mysqli_query($con,$sql1);
-		 header('location:usrhme.php');
+		 header('location:user_home.php');
 		 }
 	elseif($a==  $row['username']&&$b==$row['password']&&$row['type_id']=='1')
 	     {

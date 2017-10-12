@@ -42,9 +42,9 @@ if(!(isset($_SESSION['user_name'])))
 						</div>
 						<nav id="nav">
 							<ul>
-								<li ><a href="pro_detail.php">Your Profile</a></li>
-								<li ><a href="pro_ch_pswd.php">Change Password</a></li>
-								<li><a href="logout.php">Logout</a></li>
+								<li ><a href="ad_home.php">HOME</a></li>
+								
+								<li><a href="logout.php">LOGOUT</a></li>
 							</ul>
 						</nav>
 					</div>
@@ -60,44 +60,44 @@ if(!(isset($_SESSION['user_name'])))
 					<div id="extra">
 						<div class="container">
 							<div class="row no-collapse-1">
-								<section class="4u"> <a href="" class="image featured"><img src="images/udet.png" width="150px" height="130px" alt=""></a>
+								<section class="4u"> <a href="ad_provider_reg.php" class="image featured"><img src="images/pic01.png" width="150px" height="150px" alt=""></a>
 									<div class="box">
 										<p>Responsible for reviewing and processing additions, updates, and deletions of provider information in the Provider File database.</p>
-										<a href="pro_user_details.php" class="button"> &nbsp User Details &nbsp </a> <br><br>
-									</div>	
+										<a href="ad_provider_reg.php" class="button"> &nbsp&nbsp Add Provider &nbsp&nbsp </a> <br><br>
+										<a href="ad_pro_details_edit.php" class="button">Provider Details</a></div>
 								</section>
 								
-								<section class="4u"> <a href="" class="image featured"><img src="images/avusr.png" width="150px" height="153px" alt=""></a>
+								<section class="4u"> <a href="ad_new_chanl.php" class="image featured"><img src="images/pic03.jpg" width="150px" height="174px" alt=""></a>
 									<div class="box">
-										<p>Freeview offers 70 TV channels,with high 15 HD* channels All channels over 95% of the favourite programmes are available**.</p>
-										<a href="pro_avilable_usrs.php" class="button">Avilable Users</a><br><br></div>
-                                      
+										<p>Freeview offers 70 TV channels, 15 HD* channels, In fact over 95% of the nation’s favourite programmes are available**.</p>
+										<a href="ad_new_chanl.php" class="button">&nbsp&nbsp&nbsp Add Channels &nbsp&nbsp&nbsp</a><br><br>
+                                       <a href="ad_channel_det_edit.php" class="button">Channels Details</a></div>
 								</section>
-								<section class="4u"> <a href="" class="image featured"><img src="images/sndmsg.png" width="150px" height="130px" alt=""></a>
+								<section class="4u"> <a href="ad_new_pgm.php" class="image featured"><img src="images/avusr.png" width="150px" height="150px" alt=""></a>
 									<div class="box">
-										<p>A channel partner program helps vendors' product and associated services via the 
-										bundles from Sky All packages have  channels.</p>
-										<a href="pro_mob_msg_to_user.php" class="button">&nbsp Send Message &nbsp</a><br><br></div>
+										<p>A channel partner program helps vendors'which are the best ones in big platforms product and associated services via the channel.</p>
+										<a href="" class="button">&nbsp&nbsp -- &nbsp&nbsp</a> <br><br>
+										<a href="" class="button">---</a></div>
 								</section>
 							</div>
 							<div class="row no-collapse-1">
-								<section class="4u"> <a href="" class="image featured"><img src="images/feedback.jpg" width="150px" height="130px" alt=""></a>
+								<section class="4u"> <a href="ad_new_pkge.php" class="image featured"><img src="images/lc.jpg" width="150px" height="150px" alt=""></a>
 									<div class="box">
 										<p>Compare the Best TV packages & bundles from Sky All packages have the option to add on Sky channels.</p>
-										 <a href="pro_feedbk_view.php" class="button">&nbsp&nbsp&nbsp&nbsp&nbsp Feed back &nbsp&nbsp&nbsp&nbsp&nbsp </a><br><br> </div>
-										
+										<a href="ad_new_pkge.php" class="button">&nbsp&nbsp Add Channel list &nbsp&nbsp</a> <br><br>
+										<a href="" class="button">channel list details</a></div>
 								</section>
-								<section class="4u"> <a href="p" class="image featured"><img src="images/pr.jpg" width="150px" height="130px" alt=""></a>
+								<section class="4u"> <a href="ad_new_pgm.php" class="image featured"><img src="images/chd.jpg" width="150px" height="150px" alt=""></a>
 									<div class="box">
 										<p>A channel partner program helps vendors' product and associated services via the channel.</p>
-										<a href="" class="button">&nbsp&nbsp-- &nbsp&nbsp</a> <br><br>
-										</div>
+										<a href="ad_new_pgm.php" class="button">&nbsp&nbsp Add Program &nbsp&nbsp</a> <br><br>
+										<a href="ad_pgm_det_edit.php" class="button">Program Details</a></div>
 								</section>
-								<section class="4u"> <a href="" class="image featured"><img src="images/uap.png" width="150px" height="130px" alt=""></a>
+								<section class="4u"> <a href="" class="image featured"><img src="images/uap.png" width="150px" height="150px" alt=""></a>
 									<div class="box">
 										<p>Compare the Best TV packages & bundles from Sky All packages have the option to add on Sky channels.</p>
-										<a href="" class="button">&nbsp Add -- &nbsp</a> <br><br>
-										</div>
+										<a href="ad_add_pack.php" class="button">&nbsp&nbsp&nbsp Add Packages &nbsp&nbsp&nbsp</a> <br><br>
+										<a href="ad_package_det_edit.php" class="button">&nbsp Package Details &nbsp</a></div>
 								</section>
 								
 							

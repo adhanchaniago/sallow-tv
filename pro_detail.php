@@ -53,7 +53,7 @@ $nm=$row1["fname"];
 						<nav id="nav">
 							<ul>
 								<li><a href="pro_home.php">Home</a></li>
-								
+						<li ><a href="pro_ch_pswd.php">Change Password</a></li>
 								<li><a href="logout.php">Logout</a></li>
 							</ul>
 						</nav>

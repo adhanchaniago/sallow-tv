@@ -52,10 +52,10 @@ $nm=$row1["fname"];
 						</div>
 						<nav id="nav">
 							<ul>
-								<li><a href="user_packs.php">Suscribe Packages</a></li>
-								<li><a href="usr_own_pack_det.php">Your Package</a></li>
-								<li><a href="usr_chnls.php">Avilable Channels</a></li>
-								<li><a href="">Change Password</a></li>
+								
+								
+								<li ><a href="user_home.php">Home</a></li>
+								<li ><a href="usr_pro_change_pswd.php">Change Password</a></li>
 								<li><a href="logout.php">Logout</a></li>
 							</ul>
 						</nav>

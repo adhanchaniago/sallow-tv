@@ -9,21 +9,30 @@ if(!(isset($_SESSION['user_name'])))
 
 $pk = $_SESSION['p_name_id'];
 echo $pk;
-if(isset($_POST['proced']))
-{
-$si=$_POST["shm"];
-/* $_SESSION['scheme_id']=$si;
 $s = $_SESSION['scheme_id'];
-echo $s; */
-	if($si=='Select Scheme')
-	     {
-		 echo "<script>if(confirm('Pleace select a valid scheme!!!!')){document.location.href='usr_payment.php'}else{document.location.href='user_home.php'};</script>";
-		 }
-	else
-		{
-		$_SESSION['scheme_id']=$si;
-		header('location:u_trans.php');
-		} 
+echo $s;
+
+$q1 = "SELECT  `p_amt` FROM `scheme` WHERE `scheme_id`='$s' ";
+$result1 = $con->query($q1);
+$row1 = $result1->fetch_assoc();
+$m=$row1["p_amt"];
+
+$usr = $_SESSION['user_name'];
+ $q = "SELECT `login_id`, `username`, `password`, `type_id`, `reg_id`, `log_stat` FROM `login` WHERE `username`='$usr' ";
+$result = $con->query($q);
+$row = $result->fetch_assoc();
+$rid=$row["reg_id"];
+$rdate = date('d/m/y');
+
+if(isset($_POST['add']))
+{
+$md=$_POST["t_mod"];
+$cd=$_POST["ccv"];
+$qury="INSERT INTO `register`(`fname`, `address`, `dist_id`, `pincode`, `mob_no`,
+ `email`, `reg_date`,  `status`, `d_status`,`type_id`) VALUES
+ ('$fn','$ad','$dst','$pin','$mob','$em','$rdate','$stz','$dstz','$type')";
+ 
+ $a=mysqli_query($con,$qury);
 }
 
 ?>
@@ -83,38 +92,22 @@ echo $s; */
 							
 	<br><br>
 		<div>
-                    <header class="major">
-							<center><h3 style="color: #ffa500;">select your scheme</h3></center>
-							</header>
-						<select name="shm" required="" ><option>Select Scheme</option>
-			
-			
-            <?php
-                
-                $sql = "SELECT `scheme_id`, `no_day`, `p_amt` FROM `scheme` ;";
-                $result = mysqli_query($con, $sql);
-                if (mysqli_num_rows($result) > 0) 
-                   {
-                       while($row = mysqli_fetch_assoc($result)) 
-                          {
-                              $id=$row["scheme_id"];
-							  $catname=$row["no_day"];
-            ?>
-
-            <option value="<?php echo $id; ?>"><?php echo $catname;?></option>
-                          <?php
-						echo $id;  } }?>
-        </select><br><br> &nbsp <input type='submit' name="proced" value='next'><br><br>
-						<!--/* <select name="t_mod" required="" style="width: 310px; border: 0.5px solid blue;">
-						    <option>--Select Your Bank--</option>
+                    <div >
+                            <img src="images/payp.png" alt="paymt" title="p" width="320px">
+                         </div>
+						 
+					<center><h3 style="color: #000;">Amount is : &nbsp <?php echo ( $m ); ?></h3></center><br>
+						 
+	Select Bank<select name="t_mod" required="" style="width: 100px; border: 0.5px solid blue;">
+						    
 							<option value="SBI"> &nbsp&nbsp&nbsp&nbsp  SBI &nbsp&nbsp&nbsp&nbsp </option>
 							<option value="FEDERAL"> &nbsp FEDERAL &nbsp </option>
-							<option value="SIB"> &nbsp&nbsp&nbsp SIB &nbsp&nbsp&nbsp </option></select><br><br>
-	<input type="password" name="ccv" placeholder="Enter CCV Number" required=" " style="width: 310px; border: 0.5px solid blue;"><br>
-	<input type="text" name="mny" placeholder=""  style="width: 310px; border: 0.5px solid blue;"><br>
-		</input>
+							<option value="SIB"> &nbsp&nbsp&nbsp SIB &nbsp&nbsp&nbsp </option></select>		<br><br>		
+	
+	<input type="password" name="ccv" placeholder="ENTER CCV CODE ******" required=" " style="width: 200px; border: 0.5px solid blue;">
+		</input><br>
                                
-                               <input type='submit' name="proced" value='Proced Payment'> <br><br> */-->
+                               <input type='submit' name="add" value='Proced Payment'> <br><br> 
                            
                         </div>
                     </div>

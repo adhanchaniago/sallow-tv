@@ -10,7 +10,7 @@ if(!(isset($_SESSION['user_name'])))
 
 <html>
 	<head>
-		<title>Provider details</title>
+		<title>packages</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -40,9 +40,10 @@ if(!(isset($_SESSION['user_name'])))
 						</div>
 						<nav id="nav">
 							<ul>
-								<li ><a href="pro_home.php">Home</a></li>
-						<li ><a href="pro_ch_pswd.php">Change Password</a></li>
+								<li ><a href="user_home.php">Home</a></li>
+								<li ><a href="usr_pro_change_pswd.php">Change Password</a></li>
 								<li><a href="logout.php">Logout</a></li>
+							
 							</ul>
 						</nav>
 					</div>
@@ -53,52 +54,29 @@ if(!(isset($_SESSION['user_name'])))
 								<section>
 									
 									<center>
-	
-<form name="avil_usr" action="" method="post" "
-style=" background-size: cover;"><br><br><br>
-			<header class="major">
-			<center><h3 style="color: #ffa500;">Online Users</h3></center>
-			</header>
-
-<table >
-
-  <tr style="background-color: #4CAF50; color: #fff;">
-    <!--<td><font color="black">&nbsp;Id</font></td>-->
-    <td>First Name</td>
-    
-    <td>Mobile</td>
-	
-	
-    
-	</tr>
-<?php
-
-$results=mysqli_query($con,"SELECT `register`.`reg_id`, `register`.`fname`
-, `register`.`mob_no` FROM `register`
-,`login` WHERE `register`.`reg_id`=`login`.`reg_id` AND `register`.`type_id`='3' AND `login`.`log_stat`='1';");
-while($row=mysqli_fetch_array($results))
-	
-{
-
-?>
-<tr style="background-color: #fff;  border: 2px solid #4CAF50;">
-<!--<td><input name="id" type="id" value="<?php// echo $row['reg_id']; ?>"/></td>-->
-<td><input name="name" type="text" value="<?php echo $row['fname']; ?>" readonly /></td>
-
-<td><input name="mob" type="text" value="<?php echo $row['mob_no']; ?>" readonly /></td>
-
-
-</tr>
-<?php } ?>
-</table>
-					
-</form>
+	<div>
+<form
+			style="border:2px solid #DC6180;
+                  background-color: #fff;
+						 margin:15px 250px 10px 250px;
+						 background-size: cover;
+							"><br><br>
+							
+							<header class="major">
+										<center><h3>Program Details</h3></center>
+										
+									</header>
+							
+							</form></div>
 
 	
 </div></center>
-	
+
+					
+						
+					
+					
 				</section>
-				
 	
 <div id="footer" class="wrapper style2">
 

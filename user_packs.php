@@ -42,10 +42,8 @@ if(!(isset($_SESSION['user_name'])))
 						</div>
 						<nav id="nav">
 							<ul>
-								<li><a href="usrhme.php">Home</a></li>
-								<li><a href="usr_own_pack_det.php">Your Package</a></li>
-								<li><a href="usr_chnls.php">Avilable Channels</a></li>
-								<li><a href="">Change Password</a></li>
+								<li ><a href="user_home.php">Home</a></li>
+								<li ><a href="usr_pro_change_pswd.php">Change Password</a></li>
 								<li><a href="logout.php">Logout</a></li>
 							</ul>
 						</nav>
@@ -75,7 +73,7 @@ while($row=mysqli_fetch_array($results))
 {
 
 ?>
-<table style="border-collapse: collapse; text-align: center; width: 300px;   border: 3px solid blue;"> 
+<table style="border-collapse: collapse; text-align: center; width: 300px;   border: 0.5px solid #6666;"> 
  <tr><td><input name="pknme" type="text" value="<?php echo $row['p_name'];?>" readonly /></td></tr>
  
 <tr><td><img src="package/<?php echo $row['p_icon'];?>" alt=" " height="75" width="75"></td></tr>

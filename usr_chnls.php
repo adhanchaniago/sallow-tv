@@ -41,12 +41,8 @@ if(!(isset($_SESSION['user_name'])))
 							<span class="tag">Enjoy Your Days With Swallow.</span>
 						</div>
 						<nav id="nav">
-							<ul><li><a href="usrhme.php">Home</a></li>
-								<li><a href="user_packs.php">Avilable Packages</a></li>
-								<li><a href="">Change Password</a></li>
-								<li><a href="usr_own_pack_det.php">Your Package</a></li>
-								
-								
+							<ul><li ><a href="user_home.php">Home</a></li>
+								<li ><a href="usr_pro_change_pswd.php">Change Password</a></li>
 								<li><a href="logout.php">Logout</a></li>
 							</ul>
 						</nav>
@@ -66,8 +62,8 @@ if(!(isset($_SESSION['user_name'])))
 						 background-size: cover;
 							">
 							
-							<header class="major">
-										<center><h3>Avilable Packages</h3></center>
+							<header class="major"><br>
+										<center><h3>Your Suscribed Channels</h3></center>
 										
 									</header>
 			<table style="border-collapse: collapse; 
